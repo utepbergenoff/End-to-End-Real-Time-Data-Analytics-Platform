@@ -18,10 +18,10 @@ The architecture diagram is also in `artifacts/architecture.png` and the technic
 
 ## Reproduce on an Apple Silicon Mac
 
-The presentation laptop needs macOS, Docker Desktop running with Linux containers, and a **Python 3.12 virtual environment in the folder above this repository** at `../.venv`. The laptop already has Docker and a parent virtual environment, so use that one. No virtual environment is created by these scripts. If its path differs, set `PYTHON_BIN` to the full path of its Python executable. Internet access is needed once to pull the pinned Kafka and Spark ARM64 images and Spark's Kafka connector package. Clone the repository into the folder that contains `.venv`:
+The presentation laptop uses Apple Silicon, macOS 13 or newer, Docker Desktop, and **Python 3.14.5 in `projects-for-uni/venv`**. Clone this repository inside `projects-for-uni`, beside `venv`; the scripts will use `../venv/bin/python`. They do not create a virtual environment. Internet access is needed once to pull the pinned Kafka and Spark ARM64 images and Spark's Kafka connector package:
 
 ```bash
-cd /path/to/your/uni
+cd /path/to/projects-for-uni
 git clone https://github.com/utepbergenoff/End-to-End-Real-Time-Data-Analytics-Platform.git
 cd End-to-End-Real-Time-Data-Analytics-Platform
 ```
@@ -38,13 +38,13 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000). The first image pull and co
 To send another stream, measure performance, and rebuild the PDFs on the laptop:
 
 ```bash
-../.venv/bin/python app.py produce --minutes 240 --rate 30
-../.venv/bin/python app.py benchmark
-../.venv/bin/python make_documents.py
+../venv/bin/python app.py produce --minutes 240 --rate 30
+../venv/bin/python app.py benchmark
+../venv/bin/python make_documents.py
 bash stop_demo.sh
 ```
 
-`PYTHON_BIN` can replace `../.venv/bin/python` in those commands if the laptop's environment has another location. Python virtual environments cannot be copied reliably between Windows and macOS; install the pinned dependencies into the laptop's existing environment with `setup_laptop.sh`.
+`PYTHON_BIN` can replace `../venv/bin/python` if the laptop's environment moves. Python virtual environments cannot be copied reliably between Windows and macOS; `setup_laptop.sh` installs the pinned dependencies into the laptop's existing environment.
 
 ## Run on Windows
 

@@ -3,9 +3,10 @@ set -euo pipefail
 export PATH="$HOME/.docker/bin:/Applications/Docker.app/Contents/Resources/bin:$PATH"
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-python_bin="${PYTHON_BIN:-$root/../.venv/bin/python}"
+python_bin="${PYTHON_BIN:-$root/../venv/bin/python}"
 pid_file="$root/data/demo-pids.txt"
 [[ -x "$python_bin" ]] || { echo "Python not found: $python_bin" >&2; exit 1; }
+"$python_bin" -c 'import sys; assert sys.version_info[:2] == (3, 14), f"Python 3.14 required; found {sys.version}"'
 command -v docker >/dev/null || { echo "Docker Desktop CLI not found" >&2; exit 1; }
 docker info >/dev/null || { echo "Start Docker Desktop first" >&2; exit 1; }
 mkdir -p "$root/data" "$root/artifacts"
