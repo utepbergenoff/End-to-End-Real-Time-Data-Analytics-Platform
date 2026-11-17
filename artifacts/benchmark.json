@@ -1,0 +1,35 @@
+[
+  {
+    "target_events_per_second": 10,
+    "expected": 300,
+    "received": 300,
+    "observed_events_per_second": 9.99,
+    "mean_end_to_end_latency_ms": 120.77,
+    "system_cpu_percent": 97.7,
+    "wall_seconds": 30.03,
+    "complete": true,
+    "host": "Windows AMD64"
+  },
+  {
+    "target_events_per_second": 100,
+    "expected": 300,
+    "received": 300,
+    "observed_events_per_second": 44.97,
+    "mean_end_to_end_latency_ms": 1870.04,
+    "system_cpu_percent": 99.4,
+    "wall_seconds": 6.67,
+    "complete": true,
+    "host": "Windows AMD64"
+  },
+  {
+    "target_events_per_second": 500,
+    "expected": 300,
+    "received": 300,
+    "observed_events_per_second": 44.61,
+    "mean_end_to_end_latency_ms": 3116.29,
+    "system_cpu_percent": 93.8,
+    "wall_seconds": 6.73,
+    "complete": true,
+    "host": "Windows AMD64"
+  }
+]

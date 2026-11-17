@@ -1,0 +1,9 @@
+{
+  "train_pairs": 1458,
+  "test_pairs": 628,
+  "model_mae": 12.49524827674349,
+  "model_rmse": 15.622214055264926,
+  "baseline_mae": 13.111783439490447,
+  "baseline_rmse": 16.12580319433486,
+  "chronological_split": "first 70% train, last 30% test"
+}

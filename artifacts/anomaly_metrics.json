@@ -1,0 +1,13 @@
+{
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "tp": 25,
+  "fp": 0,
+  "fn": 0,
+  "tn": 2135,
+  "evaluation_seed": 43,
+  "events": 2160,
+  "labeled_spikes": 25,
+  "note": "Labels describe injected spikes; high CO2 is tracked separately as an operational alert."
+}
