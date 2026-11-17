@@ -18,7 +18,15 @@ The architecture diagram is also in `artifacts/architecture.png` and the technic
 
 ## Reproduce on an Apple Silicon Mac
 
-The presentation laptop needs macOS, Docker Desktop running with Linux containers, and a **Python 3.12 virtual environment in the folder above this repository** at `../.venv`. The laptop already has Docker and a parent virtual environment, so use that one. No virtual environment is created by these scripts. If its path differs, set `PYTHON_BIN` to the full path of its Python executable. Internet access is needed once to pull the pinned Kafka and Spark ARM64 images and Spark's Kafka connector package. Use a terminal in the cloned repository:
+The presentation laptop needs macOS, Docker Desktop running with Linux containers, and a **Python 3.12 virtual environment in the folder above this repository** at `../.venv`. The laptop already has Docker and a parent virtual environment, so use that one. No virtual environment is created by these scripts. If its path differs, set `PYTHON_BIN` to the full path of its Python executable. Internet access is needed once to pull the pinned Kafka and Spark ARM64 images and Spark's Kafka connector package. Clone the repository into the folder that contains `.venv`:
+
+```bash
+cd /path/to/your/uni
+git clone https://github.com/utepbergenoff/End-to-End-Real-Time-Data-Analytics-Platform.git
+cd End-to-End-Real-Time-Data-Analytics-Platform
+```
+
+Then run:
 
 ```bash
 bash setup_laptop.sh
